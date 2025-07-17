@@ -19,7 +19,7 @@ https://drive.google.com/file/d/1b_1wnlEonCiuSIIJVYwAn3EM5puSmvIg/view?usp=drive
 
 
  study-buddy-logo.mp4--->
- 
+
  https://drive.google.com/file/d/1jyqXSaLL_6ooDsR8eqSXKsLPiBR0y6Rs/view?usp=drive_link
 
 1. Place all `.mp4` files inside the `utilities/` folder in the root directory.
