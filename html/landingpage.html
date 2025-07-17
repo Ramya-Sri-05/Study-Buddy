@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <style>
+    
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-content {
+ 
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+ @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.2); 
+  }
+
+  .overlay-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  top: 30%;
+  transform: translateY(-20%);
+  padding: 0 20px;
+}
+
+.overlay-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.overlay-content p {
+  font-size: 20px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+h1, h2, p {
+  
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 0 10px #00bcd4;
+}
+
+.btn {
+  
+  padding: 12px 24px;
+  background-color: #00e5ff;
+  color: #000;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+.btn:hover {
+  background-color: #1de9b6;
+  box-shadow: 0 0 20px #1de9b6;
+  transform: scale(1.05);
+}
+  </style>
+
+</head>
+<body>
+    <video autoplay muted loop playsinline preload="auto" class="bg-video">
+    <source src="../utilities/books-flipping.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+   <div class="main-content">
+
+
+  <div class="overlay-content">
+    <h2>Welcome to Study Buddy!</h2>
+    <p>Your personal academic companion.</p>
+    <p>Take your time — all the resources you need are right here.</p>
+    <p>Happy Learning 💚</p>
+
+    <br>
+
+    <a href="home.html" class="btn">Jump In Buddy</a>
+  </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nabbar</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    
+ <nav class="navbar">
+      <ul class="sidebar">
+        <li onclick=hidesidebar(); class="close-img"><a href="#">X</a></li>
+        <li><a href="syllabus.html" class="syllabus">Syllabus</a></li>
+        <li><a href="notes.html" class="notes">Notes</a></li>
+        <li><a href="youtube.html" class="youtube"> YouTube</a></li>
+        <li><a href="important.html" class="important"> Imp Questions </a></li>
+        <li><a href="viva.html" class="viva">Viva</a></li>
+    </ul>
+    <ul>
+        <li><a href="../home.html" class="home" title="home"><img src="../utilities/logo.jpg" alt="logo" class="logo"></a></li>
+        <li class="hideOnMobile"><a href="syllabus.html" class="syllabus">Syllabus</a></li>
+        <li class="hideOnMobile"><a href="notes.html" class="notes">Notes</a></li>
+        <li class="hideOnMobile"><a href="youtube.html" class="youtube"> YouTube</a></li>
+        <li class="hideOnMobile"><a href="important.html" class="important"> Imp Questions </a></li>
+        <li class="hideOnMobile"><a href="viva.html" class="viva">Viva</a></li>
+        <li onclick=showsidebar(); class="menu-btn" title="sidebar"><a href="#"><img src="menu.jpg" alt="menu" class="menu-img"></a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function showsidebar(){
+       const sidebar = document.querySelector(".sidebar");
+       sidebar.style.display='flex';
+        
+    }
+
+      function hidesidebar(){
+       const sidebar = document.querySelector(".sidebar");
+       sidebar.style.display='none';
+        
+    }
+
+  </script>
+</body>
+</html>
