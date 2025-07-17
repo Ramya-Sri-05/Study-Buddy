@@ -19,7 +19,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .loader {
+    .loader-wrapper {
       position: absolute;
       top: 0; left: 0;
       width: 100vw;
@@ -68,45 +68,13 @@
       padding: 0 1rem;
     }
 
-    .content {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      height: 100vh;
-      background-color: #ccf2ff;
-    }
-
-    .content video {
-      width: 100vw;
-      height: 100vh;
-      
-      background-color: #ccf2ff;
-      border: none;
-      display: block;
-    }
-
-    @media (max-width: 480px) {
-      .bars div {
-        height: 1.8rem;
-        width: 0.4rem;
-      }
-
-      .text {
-        font-size: 0.9rem;
-      }
-
-      .content video {
-        width: 95%;
-        height: auto;
-      }
-    }
+    
   </style>
 </head>
 
 <body>
 
-  <div class="loader">
+  <div class="loader-wrapper" id="loader">
     <div class="bars">
       <div></div>
       <div></div>
@@ -114,7 +82,7 @@
       <div></div>
       <div></div>
     </div>
-    <div class="text">Loading Study Buddy...</div>
+    <div class="text">Sharpening pencils..Digitally</div>
   </div>
 
 

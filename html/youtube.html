@@ -5,20 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>youtube</title>
     <link rel="stylesheet" href="./partials/navbar.css">
+    <link rel="stylesheet" href="../css/youtube.css">
 </head>
 <body>
-  
+
+        <div id="loader-placeholder"></div>
         <div id="navbar-placeholder"></div>
 
-        <p>here are the videos...</p>
+         <div class="container">
+    <h1>1st Year Physics - YouTube Video Resources</h1>
+    <p class="subheading">Carefully selected topic-wise video lectures</p>
+
+      <div class="search-container">
+        <input type="text" class="search-box" placeholder="🔍 Search a topic...">
+      </div>
+
+    <div class="video-grid">
+      <div class="video-box">
+        <iframe width="100%" height="400"
+          src="https://www.youtube.com/embed/videoseries?list=PLQzUXa8lZVq8lfZN5836sohUpRCt2b6oB&si=Nk8PmM-NuLlZJ9tV "
+          frameborder="0"
+          allowfullscreen>
+      </iframe>
+        <p title="click here to see reviews">Semi Conuctors</p>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLgAPsuFfwjTpcHSI3zhNslo0Q9oxkxkU6&si=JB4umYKqvWdZn3Xt" frameborder="0" allowfullscreen></iframe>
+        <p title="click here to see reviews">Inference</p>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLQzUXa8lZVq8fMOiqtCyE-HNIVWkG1C6V&si=fFj7LGSmxQ_YErW" frameborder="0" allowfullscreen></iframe>
+        <p title="click here to see reviews">Diffraction</p>
+      </div>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL2xHbdoT5bU8dTo3Ia88FX59f9TkPWYex&si=c2KvFwrEftO7sUQA" frameborder="0" allowfullscreen></iframe>
+        <p title="click here to see reviews">Qunatum Mechanics</p>
+      </div>
+       <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLZDsLVvHvH5vurcwO1Tg7CqvpDxRd5V8Y&si=Bu2CAoRmjAR5YK4j" frameborder="0" allowfullscreen></iframe>
+        <p title="click here to see reviews">Polarization</p>
+      </div>
+    </div>
+  </div>
+
+       
 
 <script>
+  fetch("./partials/loader.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("loader-placeholder").innerHTML = data;
+    });
+
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) 
+      {
+        loader.style.display = "none";
+       const mainContent = document.querySelector(".container");
+               mainContent.style.opacity = "1";
+        document.body.style.overflow = "auto";
+      }
+
+    });
+  
   fetch("./partials/navbar.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("navbar-placeholder").innerHTML = data;
+
+      
+      document.querySelector(".menu-btn")?.addEventListener("click", () => {
+        document.querySelector(".sidebar").style.display = "flex";
+      });
+
+      document.querySelector(".close-img")?.addEventListener("click", () => {
+        document.querySelector(".sidebar").style.display = "none";
+      });
     });
 
-    </script>
+
+   
+  const videoBoxes = document.querySelectorAll(".video-box");
+
+  videoBoxes.forEach((box) => {
+    box.addEventListener("click", () => {
+      videoBoxes.forEach((b) => {
+        if (b !== box) b.style.display = "none";
+      });
+
+      box.classList.add("expanded");
+
+      
+      if (!box.querySelector(".review-section")) {
+        const reviewDiv = document.createElement("div");
+        reviewDiv.classList.add("review-section");
+        reviewDiv.innerHTML = `
+          <h3>Rate & Review this video</h3>
+          <textarea placeholder="Write your review..." class="review-text"></textarea>
+          <br/>
+          <select class="rating-select">
+            <option disabled selected>Rate this video</option>
+            <option>⭐️</option>
+            <option>⭐️⭐️</option>
+            <option>⭐️⭐️⭐️</option>
+            <option>⭐️⭐️⭐️⭐️</option>
+            <option>⭐️⭐️⭐️⭐️⭐️</option>
+          </select>
+          <div class="static-reviews">
+            <h4>What others say:</h4>
+            <ul>
+              <li>⭐️⭐️⭐️⭐️ - Very clear explanation!</li>
+              <li>⭐️⭐️⭐️ - Good, but a bit fast.</li>
+            </ul>
+          </div>
+          <button onclick="location.reload()">Back</button>
+        `;
+        box.appendChild(reviewDiv);
+      }
+    });
+  });
+
+</script>
 </body>
 </html>
