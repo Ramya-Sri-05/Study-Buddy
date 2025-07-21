@@ -1,13 +1,16 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #f0f4f8;
+  background-color: #000000;
 }
-
+.whole-container{
+  opacity: 0;
+}
 .container {
+
   padding: 2rem;
   text-align: center;
-  opacity: 0;
+ 
   transition:opacity 0.6s ease-in-out;
 }
 
@@ -15,11 +18,11 @@ body {
 
 h1 {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #ffffff;
 }
 
 .subheading {
-  color: #666;
+  color: #f1f1f1;
   margin-bottom: 2rem;
 }
 
@@ -52,34 +55,74 @@ h1 {
   justify-content: center;
   align-items: start;
 }
+.in-bx{
+  height:100%;
+  width:100%;
+  background-color: #000000;
+  position: relative;
+  z-index:99;
+}
 
 .video-box {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
+  background: rgb(0, 0, 0);
+  padding: 5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+   overflow: hidden;
+   transition: 0.2s;
+}
+.video-box::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(45deg);
+  height:600px;
+  width:200px;
+  box-shadow: 3px 3px 0px white;
+  background:linear-gradient(to left,rgb(39, 204, 255),rgb(32, 130, 242));
+  animation:move 3s 1;
+ 
+
+}
+@keyframes move{
+  100%{
+      transform:translate(-50%,-50%) rotate(225deg);
+
+  }
+}
+.video-box:hover{
+  box-shadow: 3px 2px 10px #218d9e;
 }
 
 .video-box iframe {
   width: 100%;
-  height: 180px;
-  border-radius: 8px;
+  height: 200px;
+  border-radius: 3px;
 }
 
 .video-box p {
   margin-top: 8px;
   font-weight: bold;
+  color: #ccc;
 }
 
 .video-box.expanded {
   grid-column: span 2;
-  background-color: #e6f9ff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #0d0d0d;
+  color: #e0e0ff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
 }
 
+
 .review-section {
-  margin-top: 15px;
-  text-align: left;
+  margin-top: 20px;
+  background-color: #111111;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 .review-text {
@@ -88,7 +131,9 @@ h1 {
   border-radius: 8px;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #4a90e2;
+  background-color: #1a1a1a;
+  color: white;
 }
 
 .rating-select {
@@ -96,17 +141,95 @@ h1 {
   padding: 8px;
   font-size: 14px;
   border-radius: 8px;
+  border: 1px solid #4a90e2;
+  background-color: #1a1a1a;
+  color: white;
 }
 
-.static-reviews {
+.submit-review,
+.back-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00bfff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-review:hover,
+.back-btn:hover {
+  background-color: #0099cc;
+}
+
+.dynamic-reviews {
   margin-top: 15px;
 }
 
-.static-reviews ul {
+.dynamic-reviews ul {
   padding-left: 20px;
   margin: 5px 0;
 }
 
-.static-reviews li {
+.dynamic-reviews li {
   margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.video-box.expanded .review-hint{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.video-box.expanded::after{
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+.review-hint {
+  font-size: 0.85rem;
+  color: #00bfff;
+  margin-top: 5px;
+  display: block;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: #00bfff;
+  border: 1px solid #00bfff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #00bfff;
+  z-index: 1000;
+  animation: fadeIn 0.8s ease;
+}
+
+.popup button,.back-btn {
+  background: transparent;
+  color: #00bfff;
+  border: 1px solid #00bfff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.popup button:hover,.back-btn:hover{
+    border: 1px solid #ffffff;
+    background-color: #2598bf;
+    color: #e6f9ff;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
