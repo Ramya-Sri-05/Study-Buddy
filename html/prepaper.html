@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy | Previous Papers</title>
+        <link rel="stylesheet" href="./partials/navbar.css">
+  <link rel="stylesheet" href="../css/prepaper.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="navbar-placeholder"></div> 
+
+  <main class="unique-container">
+    <h2 class="paper-title">📚 MODEL PAPERS</h2>
+
+    <div class="file-card">
+      <div class="file-icon">📄</div>
+      <div class="file-content">
+        <h3>Model Paper - Set 1</h3>
+        <p>Contains all important questions in one compact paper.</p>
+        <div class="file-actions">
+          <a href="psyllabus.pdf" target="_blank">🔍 View</a>
+          <a href="psyllabus.pdf" download>⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="file-card alt">
+      <div class="file-icon">🗂️</div>
+      <div class="file-content">
+        <h3>Model Paper - Set 2</h3>
+        <p>Latest pattern with updated question structure for 2024.</p>
+        <div class="file-actions">
+          <a href="psyllabus.pdf" target="_blank">🔍 View</a>
+          <a href="psyllabus.pdf" download>⬇ Download</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ <script>
+  fetch("./partials/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-placeholder").innerHTML = data;
+  }); 
+</script>
+
+</body>
+</html>

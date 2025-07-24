@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:black;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Syllabus Section Styling */
+.syllabus-wrapper {
+  padding: 50px 80px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ebf0f1;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.unit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.unit-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 18px 25px;
+  border-left: 4px solid #00eaff;
+    border-right: 4px solid #00eaff;
+    border-top: 2px solid #00eaff;
+      border-bottom: 2px solid #00eaff;
+
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.unit-list li:hover {
+  background-color: rgba(200,200,200,0.5);
+}
+
+.unit-list li span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  
+}
+
+.actions a {
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #ffffff;
+  background-color:rgba(0, 70, 80);
+  padding: 6px 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.actions a:hover {
+  background-color:#2e8ee2;
+}
+

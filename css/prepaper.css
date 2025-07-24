@@ -1,0 +1,96 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:black;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Container */
+.unique-container {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.paper-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  text-decoration-color: #00eaff; 
+   text-underline-offset: 20px;
+  text-align: center;
+ 
+}
+
+
+
+
+/* File Cards */
+.file-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00eaff;
+  border-left: 5px solid #00eaff;
+  border-right: 5px solid #00eaff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+.file-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.3);
+}
+
+.file-card.alt {
+  border-left-color: #ff66c4;
+  border-color: #ff66c4;
+}
+.file-card.alt:hover {
+  box-shadow: 0 6px 30px rgba(255, 102, 196, 0.3);
+}
+
+.file-icon {
+  font-size: 40px;
+  padding-top: 5px;
+}
+.file-content {
+  text-align: left;
+}
+.file-content h3 {
+  font-size: 20px;
+  color: #00eaff;
+}
+.file-card.alt .file-content h3 {
+  color: #ff66c4;
+}
+.file-content p {
+  margin: 8px 0 12px;
+  font-size: 15px;
+  color: #cccccc;
+}
+
+.file-actions a {
+  display: inline-block;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #00eaff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.file-actions a:hover {
+  color: #ffffff;
+}

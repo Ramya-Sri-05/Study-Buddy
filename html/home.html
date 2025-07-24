@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Buddy | Resources</title>
+
+
+  <link rel="stylesheet"  href="../css/home.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+    <div id="logo">
+      <img src="../utilities/Study Buddy.png" alt="Logo" />
+      <h1>STUDYBUDDY</h1>
+    </div>
+  </header>
+ 
+
+  <main class="main-form">
+    <div class="form-card">
+      <h2>Select Your Preferences</h2>
+
+      <label for="branch" style="font-size: larger;">Select Your Branch:</label>
+      <select id="branch" style="font-size: larger;">
+        <option disabled selected>-- choose your branch --</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="MECH">MECH</option>
+      </select>
+
+      <label for="year" style="font-size: larger;">Select Your Year:</label>
+      <select id="year" style="font-size: larger;">
+        <option disabled selected>-- choose year --</option>
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III</option>
+        <option value="IV">IV</option>
+      </select>
+
+      <label for="subject" style="font-size: larger;">Enter Your Subject:</label>
+      <input type="text" id="subject" placeholder="e.g. Operating Systems"style="font-size: larger;" />
+
+      <button id="searchBtn">Search🔍</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("searchBtn").addEventListener("click", function () {
+      const branch = document.getElementById("branch").value;
+      const year = document.getElementById("year").value;
+      const subject = document.getElementById("subject").value.trim();
+
+      if (!branch || !year || !subject) {
+        alert("Please fill out all fields.");
+      } else {
+        // Store the data if needed
+        localStorage.setItem("branch", branch);
+        localStorage.setItem("year", year);
+        localStorage.setItem("subject", subject);
+        window.location.href = "home1.html";
+      }
+    });
+  </script>
+</body>
+</html>

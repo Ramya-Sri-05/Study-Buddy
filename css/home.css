@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: black;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: rgba(0, 70, 80);
+  backdrop-filter: blur(6px);
+  padding: 15px;
+  border-bottom: 2px solid #00eaff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#logo img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid #bbe1fa;
+  transition: transform 0.3s ease;
+}
+
+#logo img:hover {
+  transform: scale(1.1);
+}
+
+#logo h1 {
+  font-size: 28px;
+  color: #e7ebed;
+  transition: color 0.3s ease;
+}
+
+#logo h1:hover {
+  color: #00fff5;
+}
+
+.main-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.form-card {
+  /* Glassmorphic Style Only Changed Here */
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #00eaff;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 500px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 1s ease-out;
+  transform-origin: bottom;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #f7fbfd;
+  text-align: center;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #ffffffd0;
+  transition: color 0.3s ease;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 2px solid #00eaff;
+  background-color: #0b0c0c;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  animation: pulseGlow 2s infinite;
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ Hover animation */
+select:hover,
+input:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* 💡 Pulsing border animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 6px rgba(0, 234, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(0, 234, 255, 0.3);
+  }
+}
+
+select:focus,
+input:focus {
+  background-color: #0b0c0c !important; 
+  box-shadow: 0 0 0 2px #00eaff;
+  transform: scale(1.02);
+  color: white;
+}
+
+
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border: none;
+}
+

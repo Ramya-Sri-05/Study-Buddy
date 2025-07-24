@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy | Syllabus</title>
+   <link rel="stylesheet" href="./partials/navbar.css">
+  <link rel="stylesheet" href="../css/notes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div id="navbar-placeholder"></div> 
+  
+  <main class="syllabus-wrapper">
+    <h2 class="title">📘PHYSICS NOTES</h2>
+
+    <ul class="unit-list">
+      <li>
+        <span>Unit 1: interference</span>
+        <div class="actions">
+          <a href="../utilities/interference.pdf" target="_blank"> View</a>
+        </div>
+      </li>
+      <li>
+        <span>Unit 2: Diffraction</span>
+        <div class="actions">
+          <a href="../utilities/diffraction.pdf" target="_blank"> View</a>
+        </div>
+      </li>
+      <li>
+        <span>Unit 3: polarization</span>
+        <div class="actions">
+          <a href="../utilities/polarization.pdf" target="_blank"> View</a>
+        </div>
+      </li>
+      <li>
+        <span>Unit 4:Semiconductors</span>
+        <div class="actions">
+          <a href="../utilities/semiconductors_merged.pdf" target="_blank"> View</a>
+        </div>
+      </li>
+      <li>
+        <span>Unit 5: Quantum mechanics</span>
+        <div class="actions">
+          <a href="../utilities/quantum mechanics.pdf" target="_blank"> View</a>
+        </div>
+      </li>
+    </ul>
+  </main>
+   <script>
+  fetch("./partials/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar-placeholder").innerHTML = data;
+  }); 
+</script>
+
+</body>
+</html>
+
+
+
+
+
