@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Buddy Login</title>
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+    <div class="out-box">
+  <div class="container">
+    <form class="login-box" id="loginForm">
+      <h2 class="logo">Study Buddy</h2>
+      <p>Your personal academic companion</p>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <div class="optional-text">or <a href="home.html">Skip Login</a></div>
+    </form>
+  </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      console.log("Login:", username, password);
+      alert("Logged in as " + username);
+    });
+  </script>
+</body>
+</html>
