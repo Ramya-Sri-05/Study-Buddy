@@ -81,17 +81,7 @@
       document.getElementById("loader-placeholder").innerHTML = data;
     }); 
 
-     window.addEventListener("load", () => {
-      const loader = document.getElementById("loader");
-      if (loader) 
-      {
-        loader.style.display = "none";
-       const mainContent = document.querySelector(".whole-container");
-               mainContent.style.opacity = "1";
-        document.body.style.overflow = "auto";
-      }
-
-    }); 
+  
   
   fetch("./partials/navbar.html")
     .then(res => res.text())
@@ -131,11 +121,11 @@ videoBoxes.forEach((box) => {
         <br/>
         <select class="rating-select">
         <option disabled selected>Rate this video</option>
-        <option>⭐️</option>
-        <option>⭐️⭐️</option>
-        <option>⭐️⭐️⭐️</option>
-        <option>⭐️⭐️⭐️⭐️</option>
-        <option>⭐️⭐️⭐️⭐️⭐️</option>
+        <option>⭐</option>
+        <option>⭐⭐</option>
+        <option>⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐⭐</option>
         </select>
         <button class="submit-review">Submit Review</button>
         <div class="dynamic-reviews">
@@ -164,7 +154,7 @@ videoBoxes.forEach((box) => {
       submitBtn.addEventListener("click", () => {
         const text = reviewTextEl.value.trim();
         const rating = ratingEl.value;
-        if (!text || !rating.includes("⭐️")) {
+        if (!text || !rating.includes("⭐")) {
         alert("Please enter review and rating.");
         return;
         }
@@ -196,13 +186,34 @@ function closePopup() {
   localStorage.setItem("reviewHintShown", "true");
 }
 
-window.addEventListener("load", () => {
-  
-  const shown = localStorage.getItem("reviewHintShown");
-  if (!shown) {
-    document.getElementById("review-popup").style.display = "block";
-  }
-});
+
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    const mainContent = document.querySelector(".whole-container");
+
+    if (loader) {
+      loader.classList.add("fade-out");
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        mainContent.style.opacity = "1";
+        document.body.style.overflow = "auto";
+
+        const shown = localStorage.getItem("reviewHintShown");
+        if (!shown) {
+          document.getElementById("review-popup").style.display = "block";
+        }
+
+        const boxes = document.querySelectorAll(".video-box");
+        boxes.forEach((box, index) => {
+          setTimeout(() => {
+            box.classList.add("fade-in");
+          }, 150 * index);
+        });
+      }, 500); 
+    }
+  });
+
 
 </script>
 
