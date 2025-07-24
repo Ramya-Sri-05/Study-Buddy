@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy | Syllabus</title>
+  <link rel="stylesheet" href="./partials/navbar.css">
+  <link rel="stylesheet" href="../css/syllabus.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="syllabus-wrapper">
+    <h2 class="title">📘 PHYSICS SYLLABUS</h2>
+
+    <div class="syllabus-glass">
+      <div class="glass-box">
+        <h2>📘 Physics Syllabus (Full Semester)</h2>
+        <p>This document contains a complete breakdown of all 5 units from the current semester syllabus. You can preview or download the entire syllabus in one click.</p>
+        
+        <div class="syllabus-actions">
+          <a href="../utilities/psyllabus.pdf" target="_blank" class="glass-view">🔍 View PDF</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    fetch("./partials/navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      }); 
+      document.querySelector(".menu-btn")?.addEventListener("click", () => {
+        document.querySelector(".sidebar").style.display = "flex";
+      });
+
+      document.querySelector(".close-img")?.addEventListener("click", () => {
+        document.querySelector(".sidebar").style.display = "none";
+      });
+  </script>
+
+</body>
+</html>

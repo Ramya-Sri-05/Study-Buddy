@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: black;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.syllabus-wrapper {
+  padding: 50px 80px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ebf0f1;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Syllabus Glass Section */
+.syllabus-glass {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('images/syllabus1.jpg') no-repeat center center/cover;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 30px 10px;
+}
+
+.syllabus-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.glass-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  border: 3px solid #00eaff;
+  border-left: 7px solid #00eaff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  animation: fadeInScale 1.2s ease-in-out;
+}
+
+.glass-box h2 {
+  font-size: 26px;
+  color: #00fff5;
+  margin-bottom: 20px;
+}
+
+.glass-box p {
+  font-size: 16px;
+  color: #d6f4f4;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.syllabus-actions a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.glass-view {
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  background-color: transparent;
+}
+.glass-view:hover {
+  background-color: #00ffff;
+  color: #0f2027;
+}
+
+.glass-download {
+  background-color: #00ffff;
+  color: #0f2027;
+}
+.glass-download:hover {
+  background-color: #03dcdc;
+}
+
+/* ---------------------------------------
+   ✅ MEDIA QUERIES for PHONES & TABLETS
+------------------------------------------*/
+@media (max-width: 768px) {
+  .syllabus-wrapper {
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .glass-box {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  .glass-box h2 {
+    font-size: 22px;
+  }
+
+  .glass-box p {
+    font-size: 14px;
+  }
+
+  .syllabus-actions a {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .glass-box h2 {
+    font-size: 20px;
+  }
+
+  .glass-box p {
+    font-size: 13px;
+  }
+}
