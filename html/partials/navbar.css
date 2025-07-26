@@ -30,10 +30,8 @@ nav li{
     height: 60px;
 }
 nav a{
-    height:80%;
-    font-size: large;
-    font-weight: 400;
-    padding:0 30px;
+    height:70%;
+    padding:0 20px;
     text-decoration:none;
     display:flex;
     align-items: center;
@@ -46,7 +44,7 @@ nav .horizontal a:not(.home):not(.menu-btn){
     border-radius: 20px;
     margin-right: 1em;
     box-shadow: 0 0 5px white;
-    font-size:large;
+  
 }
 nav .horizontal a:not(.home):not(.menu-btn):hover{
     background-color: #2e8ee2;
@@ -57,7 +55,6 @@ nav .horizontal a:not(.home):not(.menu-btn):hover{
 }
 
 .sidebar {
-  background-color: red !important; /* just for testing */
   z-index: 9999;
 }
 

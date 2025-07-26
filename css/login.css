@@ -13,7 +13,7 @@ body {
   justify-content: center;
 }
 .out-box {
-  background: black;
+  background: rgb(0, 0, 0);
   padding: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -45,7 +45,7 @@ body {
   z-index:9;
   position:relative;
   background-color: #000;
-border-radius: 20px;
+  border-radius: 20px;
 
   
 }
@@ -139,7 +139,7 @@ border-radius: 20px;
   box-shadow: 0 0 5px #22f2ff;
 }
 
-.login-box button {
+.login-box button,.pop-up button {
   width: 100%;
   padding: 12px;
   background: #0abdc6;
@@ -152,14 +152,14 @@ border-radius: 20px;
   
 }
 
-.login-box button:hover {
+.login-box button:hover , .pop-up button:hover{
   background: #22f2ff;
 }
 
 .optional-text {
   text-align: center;
   margin-top: 15px;
-  color: #aaa;
+  color: #ffffff;
   font-size: 14px;
 }
 
@@ -172,4 +172,52 @@ border-radius: 20px;
   text-decoration: underline;
 }
 
+.pop-up{
+  width:450px;
+  height: 380px;
+  background:#000000;
+  border-radius:30px;
+  position:absolute;
+  border:5px solid rgb(71, 191, 235);
+  box-shadow: 0 0 10px white;
+  top:0;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0.1);
+  text-align:center;
+  padding:0 30px 30px;
+  z-index: 1000;
+  visibility: hidden;
+  transition:transform 0.5s,top 0.5s;
 
+}
+
+.open-popup{
+  visibility: visible;
+  top:50%;
+  transform:translate(-50%,-50%) scale(1);
+
+
+}
+.pop-up img{
+ 
+  width:100px;
+  height: 100px;
+  margin-top:-50px;
+  border-radius: 50%;
+  box-shadow:0 0 10px rgba(255, 255, 255, 0.973)
+
+
+}
+.pop-up h2{
+  font-size:38px;
+  font-weight:500;
+  margin:30px 0 10px;
+  color: white;
+  
+
+}
+.pop-up p{
+  color:white;
+  font-size:19px;
+  margin:30px 0 10px;
+}

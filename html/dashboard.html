@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+       
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="logo">Study Buddy</h2>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h4 id="username-display">Welcome!</h4>
+                        <p id="user-branch-year">Student</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-section="home">
+                        <a href="#home">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="profile">
+                        <a href="#profile">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="notes">
+                        <a href="#notes">
+                            <i class="fas fa-sticky-note"></i>
+                            <span>Notes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="videos">
+                        <a href="#videos">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Videos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="marks">
+                        <a href="#marks">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Marks</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+       
+        <main class="main-content">
+          
+            <section id="home" class="content-section active">
+                <div class="section-header">
+                    <h1>Welcome Back!</h1>
+                    <div class="quote-container">
+                        <p id="daily-quote">Loading your daily motivation...</p>
+                        <span id="quote-author"></span>
+                    </div>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="overview-content">
+                            <h3>Notes Overview</h3>
+                            <div class="overview-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" id="notes-viewed">5</span>
+                                    <span class="stat-label">Viewed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="notes-created">3</span>
+                                    <span class="stat-label">Created</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="overview-content">
+                            <h3>YouTube Videos</h3>
+                            <div class="overview-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" id="videos-watched">8</span>
+                                    <span class="stat-label">Watched</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="videos-rated">6</span>
+                                    <span class="stat-label">Rated</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="activity-list">
+                    </div>
+                </div>
+            </section>
+
+            <section id="profile" class="content-section">
+                <div class="section-header">
+                    <h1>Profile</h1>
+                    <p>Your academic information and preferences</p>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="profile-username">Student Name</h3>
+                            <p id="profile-branch-year">Branch • Year</p>
+                            <div class="cgpa-edit-row">
+                                <label for="profile-cgpa-input" style="color:#b0b0b0;">CGPA:</label>
+                                <input type="number" id="profile-cgpa-input" min="0" max="10" step="0.01" style="width:70px; margin:0 8px;" />
+                                <button id="save-cgpa-btn" class="btn-secondary" style="padding:4px 10px; font-size:13px;">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <h3>Academic Details</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Username:</span>
+                                <span class="detail-value" id="detail-username">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Branch:</span>
+                                <span class="detail-value" id="detail-branch">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Year:</span>
+                                <span class="detail-value" id="detail-year">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">CGPA:</span>
+                                <span class="detail-value" id="detail-cgpa">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="notes" class="content-section">
+                <div class="section-header">
+                    <h1>Notes</h1>
+                    <p>Manage your study notes and view available resources</p>
+                </div>
+                
+                <div class="notes-content">
+                    <div class="notes-header">
+                        <button class="btn-primary" id="create-note-btn">
+                            <i class="fas fa-plus"></i> Create New Note
+                        </button>
+                        <div class="search-box">
+                            <input type="text" id="notes-search" placeholder="Search notes...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="notes-tabs">
+                        <button class="tab-btn active" data-tab="viewed">Viewed Notes</button>
+                        <button class="tab-btn" data-tab="created">My Notes</button>
+                    </div>
+                    
+                    <div class="notes-section" id="viewed-notes">
+                        <h3>Available Notes (from notes resource)</h3>
+                        <div class="notes-grid" id="viewed-notes-grid">
+                        </div>
+                    </div>
+                    
+                    <div class="notes-section" id="created-notes" style="display: none;">
+                        <h3>My Created Notes</h3>
+                        <div class="notes-grid" id="created-notes-grid">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="videos" class="content-section">
+                <div class="section-header">
+                    <h1>YouTube Videos</h1>
+                    <p>Track your video learning progress and reviews</p>
+                </div>
+                
+                <div class="videos-content">
+                    <div class="videos-overview">
+                        <div class="overview-stat">
+                            <span class="stat-number" id="total-videos">5</span>
+                            <span class="stat-label">Total Videos</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="stat-number" id="watched-videos">3</span>
+                            <span class="stat-label">Watched</span>
+                        </div>
+                        <div class="overview-stat">
+                            <span class="stat-number" id="rated-videos">2</span>
+                            <span class="stat-label">Rated</span>
+                        </div>
+                    </div>
+                    
+                    <div class="videos-grid" id="videos-grid">
+                    </div>
+                    
+                    <div class="reviews-section">
+                        <h3>My Reviews & Ratings</h3>
+                        <div class="reviews-list" id="reviews-list">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="marks" class="content-section">
+                <div class="section-header">
+                    <h1>Marks</h1>
+                    <p>Track your midterm performance and see what you need in the semester exam to achieve each grade.</p>
+                </div>
+                
+                <div class="marks-content">
+                    <div class="marks-header">
+                        <button class="btn-primary" id="add-subject-btn">
+                            <i class="fas fa-plus"></i> Add Subject & Mid Marks
+                        </button>
+                    </div>
+                    
+                    <div class="marks-overview">
+                        <div class="overview-card">
+                            <h3>Overall Performance</h3>
+                            <div class="average-score" id="overall-average">0%</div>
+                            <p>Based on all subjects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="marks-table-container">
+                        <h3>Subject-wise Midterm Marks</h3>
+                        <div class="table-wrapper">
+                            <table id="marks-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Mid 1<br/>(30)</th>
+                                        <th>Mid 2<br/>(30)</th>
+                                        <th>Final Mid<br/>(30)</th>
+                                        <th>Needed for S<br/>(90)</th>
+                                        <th>Needed for A<br/>(80)</th>
+                                        <th>Needed for B<br/>(70)</th>
+                                        <th>Needed for C<br/>(60)</th>
+                                        <th>Needed for D<br/>(50)</th>
+                                        <th>Needed for E<br/>(40)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="marks-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-chart">
+                        <h3>Performance Visualization</h3>
+                        <div class="chart-container" id="marks-chart">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="add-subject-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Subject & Mid Marks</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="add-subject-form">
+                    <div class="form-group">
+                        <label for="subject-name">Subject Name:</label>
+                        <input type="text" id="subject-name" required placeholder="e.g., Physics">
+                    </div>
+                    <div class="form-group">
+                        <label for="mid1-marks">Mid 1 Marks (out of 30):</label>
+                        <input type="number" id="mid1-marks" required placeholder="e.g., 20" min="0" max="30">
+                    </div>
+                    <div class="form-group">
+                        <label for="mid2-marks">Mid 2 Marks (out of 30):</label>
+                        <input type="number" id="mid2-marks" required placeholder="e.g., 25" min="0" max="30">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancel-add">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Subject</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="create-note-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Note</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="create-note-form">
+                    <div class="form-group">
+                        <label for="note-title">Note Title:</label>
+                        <input type="text" id="note-title" required placeholder="e.g., Physics - Quantum Mechanics">
+                    </div>
+                    <div class="form-group">
+                        <label for="note-content">Note Content:</label>
+                        <textarea id="note-content" required placeholder="Write your notes here..." rows="6"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancel-note">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Note</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

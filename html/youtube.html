@@ -18,8 +18,19 @@
     <h1>1st Year Physics - YouTube Video Resources</h1>
     <p class="subheading">Carefully selected topic-wise video lectures</p>
 
-      <div class="search-container">
+    <!--   <div class="search-container">
         <input type="text" class="search-box" placeholder="🔍 Search a topic...">
+      </div> -->
+
+ <div class="wrapper">
+          <div class="item item1"><h4>HHTML</h4></div>
+          <div class="item item2"><h4>OS</h4></div>
+          <div class="item item3"><h4>SQL</h4></div>
+          <div class="item item4"><h4>JAVA</h4></div>
+          <div class="item item5"><h4>PYTHON</h4></div>
+          <div class="item item6"><h4>C</h4></div>
+          <div class="item item7"><h4>DBMS</h4></div>
+          <div class="item item8"><h4>DSA</h4></div>
       </div>
 
     <div class="video-grid">
@@ -75,11 +86,11 @@
 </div>
 
 <script>
-   fetch("./partials/loader.html")
+  fetch("./partials/loader.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("loader-placeholder").innerHTML = data;
-    }); 
+    });  
 
   
   

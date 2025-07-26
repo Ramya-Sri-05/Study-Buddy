@@ -14,11 +14,22 @@
       <p>Your personal academic companion</p>
       <input type="text" id="username" placeholder="Username" required />
       <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Login</button>
+      <button type="submit" onclick="openPopup()">Login</button>
       <div class="optional-text">or <a href="home.html">Skip Login</a></div>
     </form>
   </div>
+
+   
   </div>
+
+     <div class="pop-up" id="pop-up">
+          <img src="../utilities/tick-mark.png" alt="tick-mark">
+          <h2>Thank You!</h2>
+          <p>Your details has been Saved..You will have Curated DashBoard</p>
+          <a href="dashboard.html"><button type="button">Lets Get Started</button></a>
+      </div>
+
+
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function(e) {
@@ -26,9 +37,26 @@
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
+      // Store username in localStorage
+      localStorage.setItem('username', username);
+      
       console.log("Login:", username, password);
       alert("Logged in as " + username);
     });
+
+
+    let popup=document.getElementById("pop-up");
+    function openPopup(){
+      popup.classList.add("open-popup");
+    }
+
+    // Update the dashboard link to include username
+    document.querySelector('.pop-up a').addEventListener('click', function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      window.location.href = `dashboard.html?username=${encodeURIComponent(username)}`;
+    });
+
   </script>
 </body>
 </html>
